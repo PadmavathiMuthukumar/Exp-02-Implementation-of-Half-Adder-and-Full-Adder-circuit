@@ -58,8 +58,6 @@ and(q,b,c);
 and(r,a,c);
 or(carry,p,q,r);
 endmodule
-Logic symbol & Truthtable
-RTL realization
 ```
 # Truth table
 HALF ADDER:
