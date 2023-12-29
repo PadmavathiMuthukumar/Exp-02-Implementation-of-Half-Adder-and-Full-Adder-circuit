@@ -34,21 +34,62 @@ Sum =A’B’Cin + A’BCin’ + ABCin + AB’Cin’ = A ⊕ B ⊕ Cin Carry = A
 Connect the supply (+5V) to the circuit
 Switch ON the main switch
 If the output is 1, then the led glows.
-### 
-Program:
-/*
+### Program
+```
 Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+
+HALF ADDER:
+module halfadd(a,b,sum,carry);
+input a,b;
+output sum,carry;
+xor(sum,a,b);
+and(carry,a,b);
+endmodule
+
+FULL ADDER:
+module fulladder(a,b,c,sum,carry);
+input a,b,c;
+output sum,carry;
+wire x,p,q,r;
+xor(x,b,c);
+xor(sum,x,a);
+and(p,a,b);
+and(q,b,c);
+and(r,a,c);
+or(carry,p,q,r);
+endmodule
 Logic symbol & Truthtable
 RTL realization
+```
+# Truth table
+HALF ADDER:
+
+![image](https://github.com/PadmavathiMuthukumar/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/154965880/b3b7244a-e685-474e-a974-6d86adbe9796)
+
+FULL ADDER:
+
+![image](https://github.com/PadmavathiMuthukumar/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/154965880/07dc5b3e-3d49-4185-b5ec-897c184973d4)
 
 ### Output:
 ### RTL
+HALF ADDER:
+
+![image](https://github.com/PadmavathiMuthukumar/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/154965880/f19b0f1e-f3bd-4f36-b746-218b0711e15e)
+
+FULL ADDER:
+
+![image](https://github.com/PadmavathiMuthukumar/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/154965880/8dd28751-896e-4f81-820d-23adc2724711)
+
 ### TIMING DIAGRAM
+HALF ADDER:
 
+![image](https://github.com/PadmavathiMuthukumar/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/154965880/525ecd2d-e4c7-4ed0-a663-6f3c7cd4715b)
 
-### TRUTH TABLE 
+FULL ADDER:
+
+![image](https://github.com/PadmavathiMuthukumar/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/154965880/5d070173-d347-4c70-9ec4-89bdd8b9dee9)
 
 ### Result:
+```
+Thus, a half adder and full adder circuit is designed to verify its truth table in Quartus using Verilog programming.
+```
